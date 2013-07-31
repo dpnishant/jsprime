@@ -20,3 +20,7 @@ Upcoming features:
 
 Automatic code de-obfuscation & decompression through Hybrid Analysis (Ra.2 improvisation; http://code.google.com/ra2-dom-xss-scanner)
 ECMAScript family support (ActionScript 3, Node.JS, WinJS)
+
+
+Test Cases Document URL: http://goo.gl/vf61Km
+Sources & Sinks Document URL: http://goo.gl/olzYM4 
