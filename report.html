@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta charset="utf-8">
+
+   <title>JSPrime Scan Report</title>
+   <link href="scripts/lib/report/1.css" media="all" rel="stylesheet">
+   <link href="scripts/lib/report/2.css" media="all" rel="stylesheet">
+   <link rel="stylesheet" href="scripts/lib/custom.css">
+</head>
+
+<body>
+   <header>
+     <div id="logo"><img src="resources/jsp_logo.png"></div>
+   </header>
+   <div id="title">static <b>javascript</b> analyzer</div>
+   <div id="output">
+      <div class="report" data-validateurl="" id="addon-validator-suite">
+         <div class="results">
+            <div class="result" id="suite-results-tier-3" style="">
+               <div class="result-header">
+                  <ul class="result-nav">
+                     <li><a href="">Prev</a></li>
+                     <li><a href="">Top</a></li>
+                     <li><a href="">Next</a></li>
+                  </ul>
+                  <h4 id="extension-tests">Scan Report</h4>
+                  <div class="result-summary" style="visibility: visible;">
+                     0 confirmed, 5 potential
+                  </div>
+               </div>
+               <div class="tier-results tests-passed-warnings" data-tier="3" id="resultRows">
+			   
+                  <div class="msg msg-warning" id="">
+                     <h5>Global variable overwrite</h5>
+                     <p>Warning: An attempt was made to overwrite a global
+                     variable in some JavaScript code.</p>
+                     <div class="context">
+                        <div class="file">
+                           src/view/process.js
+                        </div>
+                        <div class="code">
+                           <div class="lines">
+                              <div>1</div>
+                              <div>2</div>
+                           </div>
+                           <div class="inner-code">
+                              <div>
+                                 window.onscroll = function (e) {
+                              </div>
+                              <div>
+                                 &nbsp;&nbsp;getheight();
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body></html>
