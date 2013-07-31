@@ -1,4 +1,4 @@
-real_func_names = [];
+﻿real_func_names = [];
 real_func_call = [];
 real_variable_const = [];
 real_variable_var = [];
@@ -9,13 +9,15 @@ var startScope=[];
 var endScope=[];
 var currentObj="";
 
+
 options = {
-  		loc: true,
+			loc: true,
 			comment: false,
             raw: false,
             range: false,
             tolerant: false
         };
+
 
 function adjustRegexLiteral(key, value) {
 	if (key === 'value' && value instanceof RegExp) {
@@ -2315,8 +2317,9 @@ function getFunctions(node)
 					});
 					real_func_names.push(data);
 				}
+				
 			}
-   }
+        }
 }
 
 var reportOutput='<html dir="ltr" lang="en-US"><head id="reportHead"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><title>JSPrime Scan Report</title><link href="scripts/lib/report/1.css" media="all" rel="stylesheet"><link href="scripts/lib/report/2.css" media="all" rel="stylesheet"><link rel="stylesheet" href="scripts/lib/custom.css"></head><body><header><div id="logo"><img src="resources/jsp_logo.png"></div></header><div id="title">static <b>javascript</b> analyzer</div><div id="output"><div class="report" data-validateurl="" id="addon-validator-suite"><div class="results"><div class="result" id="suite-results-tier-3" style=""><div class="result-header"><h4 id="extension-tests">Scan Report</h4><div id="result-summary" class="result-summary" style="visibility: visible;"></div></div><div class="tier-results tests-passed-warnings" data-tier="3" id="resultRows"></div></div></div></div></div></body></html>';

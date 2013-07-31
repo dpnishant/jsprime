@@ -30,7 +30,7 @@ var win;
 
 function analyzeArrays()
 {
-  //console.log(JSON.stringify(sink));	
+	//console.log(JSON.stringify(sink));	
 	win=window.open("report.html", '_blank');
 	win.document.write(reportOutput);
 

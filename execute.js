@@ -2,7 +2,7 @@ var msg="DOM XSS Confirmed !!";
 var domInject=[];
 var domInjectSource=[];
 function executeJSPrime()
-{  
+{	
 	var sOrangeData=document.getElementById('aOrangeData').value;
 	var sOtherData=document.getElementById('aOtherData').value;
 	var sRedData=document.getElementById('aRedData').value;
