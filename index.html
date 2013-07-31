@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>.: JSPrime :.</title>
+    <script src="scripts/lib/codemirror.js"></script>
+    <script src="scripts/addon/edit/matchbrackets.js"></script>
+    <script src="scripts/addon/edit/continuecomment.js"></script>
+    <script src="scripts/addon/comment/comment.js"></script>
+    <script src="scripts/mode/javascript/javascript.js"></script>
+  <script src="esprima.js"></script>
+	<script src="engine.js"></script>
+	<script src="analyzer.js"></script>
+    <link rel="stylesheet" href="scripts/doc/docs.css">
+    <link rel="stylesheet" href="scripts/lib/codemirror.css">
+    <link rel="stylesheet" href="scripts/lib/custom.css">
+  </head>
+  <body>
+  <div id="wrapper">
+	  <header>	
+	    <div id="logo"><img src="resources/jsp_logo.png"></div>
+	  </header>
+     <div id="scriptBox">
+      <div id="title">static <b>javascript</b> analyzer</div>
+	  <div><textarea id="code" name="code" style="display: none;"></textarea>
+		  
+	  </div>
+	<div>
+		<p>
+			<!--<input type="button" id="btnAnalyze" name="Analyze" value="Analyze" />-->
+			<a class="buttons" onclick="getEditorValue()">Run</a>
+		</p>
+	</div>
+     </div>
+  </div>
+    <script>
+	var editorValue="";
+      editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        continueComments: "Enter",
+        extraKeys: {"Ctrl-Q": "toggleComment"}
+      });
+      
+      function getEditorValue(){
+      	editorValue=editor.getValue();
+		analyze();
+      }
+    </script>
+</body></html>
