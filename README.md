@@ -23,4 +23,8 @@ ECMAScript family support (ActionScript 3, Node.JS, WinJS)
 
 
 Test Cases Document URL: http://goo.gl/vf61Km
-Sources & Sinks Document URL: http://goo.gl/olzYM4 
+
+Sources & Sinks Document URL: http://goo.gl/olzYM4
+
+BlackHat Slide: http://www.slideshare.net/nishantdp/jsprime-bhusa13new
+
