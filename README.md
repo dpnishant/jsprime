@@ -46,3 +46,15 @@ Sources & Sinks Document URL: http://goo.gl/olzYM4
 
 BlackHat Slide: http://www.slideshare.net/nishantdp/jsprime-bhusa13new
 
+
+Usage
+=======
+Web Client
+----------
+Open "index.html" in your browser.
+
+Server-Side (Node.JS)
+---------------------
+1. In the terminal type "node server.js"
+2. Go to 127.0.0.1:8888 in your browser.
+
