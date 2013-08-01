@@ -1,3 +1,9 @@
+Authors
+=========
+Nishant Das Patnaik (nishant.dp@)
+
+Sarathi Sabyasachi Sahoo (sarathisahoo@)
+
 Introduction
 ===============
 Today, more and more developers are switching to JavaScript as their first choice of language. The reason is simple JavaScript has now been started to be accepted as the mainstream programming for applications, be it on the web or on the mobile; be it on client-side, be it on the server side. JavaScript flexibility and its loose typing is friendly to developers to create rich applications at an unbelievable speed. Major advancements in the performance of JavaScript interpreters, in recent days, have almost eliminated the question of scalability and throughput from many organizations. So the point is JavaScript is now a really important and powerful language we have today and it's usage growing everyday. From client-side code in web applications it grew to server-side through Node.JS and it's now supported as proper language to write applications on major mobile operating system platforms like Windows 8 apps and the upcoming Firefox OS apps.
