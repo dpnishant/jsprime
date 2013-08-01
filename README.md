@@ -5,23 +5,33 @@ But the problem is, many developers practice in-secure coding which leads to man
 I would like to highlight some of the interesting features of the tool below:
 
 JS Library Aware Source & Sinks
+
 Most dynamic or static analyzers are developed to support native/pure JavaScript which actually is a problem for most developers since the introductions and wide-adoption for JavaScript frameworks/libraries like jQuery, YUI etc. Since these scanners are designed to support pure JavaScript, they fail at understanding the context of the development due to the usage of libraries and produce many false-positives and false-negatives. To solve this we have identified the dangerous user input sources and code execution sink functions for jQuery and YUI, for the initial release and we shall talk about how users can easily extend it for other frameworks.
-Variable & Function Tracing
-This feature is a part of our code flow analysis algorithm
-Variable & Function Scope Aware analysis
-This feature is a part of our code flow analysis algorithm
+
+Variable & Function Tracing (This feature is a part of our code flow analysis algorithm)
+
+Variable & Function Scope Aware analysis (This feature is a part of our code flow analysis algorithm)
+
 Known filter function aware
+
 OOP & Protoype Compliant
+
 Minimum False Positive alerts
+
 Supports minified javascript
+
 Blazing fast performance
+
 Point and Click :-) (my personal favorite)
+
 Upcoming features:
 
 Automatic code de-obfuscation & decompression through Hybrid Analysis (Ra.2 improvisation; http://code.google.com/ra2-dom-xss-scanner)
+
 ECMAScript family support (ActionScript 3, Node.JS, WinJS)
 
-
+Links
+=====
 Test Cases Document URL: http://goo.gl/vf61Km
 
 Sources & Sinks Document URL: http://goo.gl/olzYM4
