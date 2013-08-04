@@ -34,7 +34,7 @@ Point and Click :-) (my personal favorite)
 
 Upcoming features:
 
-Automatic code de-obfuscation & decompression through Hybrid Analysis (Ra.2 improvisation; http://code.google.com/ra2-dom-xss-scanner)
+Automatic code de-obfuscation & decompression through Hybrid Analysis (Ra.2 improvisation; http://code.google.com/p/ra2-dom-xss-scanner)
 
 ECMAScript family support (ActionScript 3, Node.JS, WinJS)
 
