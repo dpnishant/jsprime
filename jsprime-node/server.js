@@ -16,12 +16,12 @@ http.createServer(onRequest).listen(8888);
 var http = require('http'),
     fs = require('fs');	
 var querystring = require('querystring');
-var esprima = require('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/esprima.js');
-var engine = require('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/engine.js');
-var analyzer = require('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/analyzer.js');
+var esprima = require('./esprima.js');
+var engine = require('./engine.js');
+var analyzer = require('./analyzer.js');
 
 
-fs.readFile('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/test.html', function (err, html) {
+fs.readFile('./test.html', function (err, html) {
     if (err) {
         throw err; 
     }       
@@ -63,7 +63,7 @@ fs.readFile('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/test.html', funct
 	}
 	/*
 if (request.method == 'POST') {
-		var esprima = require('/Users/nishantp/Desktop/jsprime-demo/jsprime-node/esprima.js');
+		var esprima = require('./esprima.js');
         var body = '';
         request.on('data', function (data) {
             body += data;
