@@ -193,7 +193,7 @@ function asignFunctionReturnValue()
 					{
 						for(var t=0;t<real_func_names[j].returns.variables.length;t++)
 						{
-							var returnValue=real_func_names[j].returns.variables[t].replace("#THIS#",objName[0]);
+							var returnValue=(real_func_names[j].returns.variables[t] || "").replace("#THIS#",objName[0]);
 							real_func_call[j1].returns.variables.push(returnValue);
 						}
 					}
