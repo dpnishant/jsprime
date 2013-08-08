@@ -132,7 +132,7 @@ function asignFunctionReturnValue(sink)
 					var objName=real_variable_var[i].name.split(".");
 					for(var t=0;t<real_func_names[j].returns.variables.length;t++)
 					{
-						var returnValue=real_func_names[j].returns.variables[t].replace("#THIS#",objName[0]);
+						var returnValue=(real_func_names[j].returns.variables[t] || "").replace("#THIS#",objName[0]);
 						real_variable_var[i].value=returnValue;
 						
 						for(var k=0;k<sink.length;k++)
