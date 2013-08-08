@@ -452,7 +452,7 @@ function checkFunctionCallee(val,actualSource,sourceObj)
 	{
 		for(var j=0;j<real_func_call[i].arguments.variables.length;j++)
 		{
-			var args=real_func_call[i].arguments.variables[j].split("+");
+			var args=(real_func_call[i].arguments.variables[j] || "").split("+");
 			for(var k=0;k<args.length;k++)
 			{
 				if(args[k]==val)
