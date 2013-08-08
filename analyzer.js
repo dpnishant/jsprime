@@ -588,7 +588,7 @@ function checkFunctionCallee(val,actualSource,sourceObj)
 	{
 		for(var j=0;j<real_func_call[i].arguments.variables.length;j++)
 		{
-			var args=real_func_call[i].arguments.variables[j].split("+");
+			var args=(real_func_call[i].arguments.variables[j] || "").split("+");
 			for(var k=0;k<args.length;k++)
 			{
 				if(args[k]==val)
@@ -760,7 +760,7 @@ function checkFunctionsWithDirectSource(source)
 	{
 		for(var k=0;k<real_func_call[j].arguments.variables.length;k++)
 		{
-			var args=real_func_call[j].arguments.variables[k].split("+");
+			var args=(real_func_call[j].arguments.variables[k] || "").split("+");
 			for(var l=0;l<args.length;l++)
 			{
 				if(args[l].indexOf(source)!=-1)
