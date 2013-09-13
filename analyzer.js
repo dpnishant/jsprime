@@ -606,30 +606,28 @@ function checkFunctionCallee(val,actualSource,sourceObj)
 	}
 }
 
-function checkRecursiveFunctionCallee(func,func2,actualSource,sourceObj,realFunc,pos)
-{
+function checkRecursiveFunctionCallee(func,func2,actualSource,sourceObj,realFunc,pos) {
 	var doRepeat=false;
-	for(var j1=0;j1<func.arguments.variables.length;j1++)
-	{
-		var args2=func.arguments.variables[j1].split("+");
-		
-		for(var k1=0;k1<args2.length;k1++)
-		{
-			var aVal=args2[k1].split(".");
+	for(var j1=0;j1<func.arguments.variables.length;j1++) {
+
+		if(func.arguments.variables[j1]!=undefined) {
 			
-			if(aVal[0]==func2.name)
-			{				
-				doRepeat=true;
-				checkPassValueToFunction(func.name,aVal[0],j1,actualSource,sourceObj);
-				break;
+			var args2=func.arguments.variables[j1].split("+");
+		
+			for(var k1=0;k1<args2.length;k1++) {
+				var aVal=args2[k1].split(".");
+			
+				if(aVal[0]==func2.name) {				
+					doRepeat=true;
+					checkPassValueToFunction(func.name,aVal[0],j1,actualSource,sourceObj);
+					break;
+				}
 			}
 		}
 	}
-	if(doRepeat==true)
-	{
+	if(doRepeat==true) {
 		pos--;
-		if(realFunc[pos-1])
-		{
+		if(realFunc[pos-1]) {
 			checkRecursiveFunctionCallee(realFunc[pos-1],realFunc[pos],actualSource,sourceObj,realFunc,pos);
 		}
 	}
