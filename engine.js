@@ -1921,13 +1921,14 @@ function getFunctions(node) {
         traverseMini(body, function (node2) {
           if (node2.type == "ReturnStatement" && node2.argument) {
             var args = "";
-            if (node2.argument.name != undefined)
+            if(node2.argument!=null) {
+            if(node2.argument.name != undefined)
               data.returns.variables.push(node2.argument.name);
             if (node2.argument.value != undefined) {
               data.returns.literals.push(node2.argument.value);
               data.returns.variables.push("#CONSTANT_VAL#");
             }
-            if (node2.argument.type == "CallExpression") {
+            if(node2.argument.type == "CallExpression") {
               var node4 = node2.argument.callee;
               var funcName4 = "";
               var nodeValue = "";
@@ -1982,9 +1983,9 @@ function getFunctions(node) {
               if (funcName4 != "")
                 data.returns.variables.push(funcName4);
             }
-
           }
-        });
+        }
+      });
         real_func_names.push(data);
       }
 
