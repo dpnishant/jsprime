@@ -1828,6 +1828,7 @@ function getFunctions(node) {
         traverseMini(body, function (node2) {
           if (node2.type == "ReturnStatement") {
             var args = "";
+            if(node2.argument!=null){
             if (node2.argument.name != undefined)
               data.returns.variables.push(node2.argument.name);
             if (node2.argument.value != undefined) {
@@ -1891,9 +1892,9 @@ function getFunctions(node) {
               if (funcName4 != "")
                 data.returns.variables.push(funcName4);
             }
-
           }
-        });
+        }
+      });
         real_func_names.push(data);
       } else {
         var funcName = "";
