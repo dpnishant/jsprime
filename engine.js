@@ -197,7 +197,7 @@ function asignFunctionReturnValue() {
           //var objName=real_variable_var[i].name.split(".");
           var objName = real_func_names[j].name.split(".");
           for (var t = 0; t < real_func_names[j].returns.variables.length; t++) {
-            if (real_func_names[j].returns.variables != undefined) {
+            if (real_func_names[j].returns.variables[t] != undefined) {
                var returnValue = real_func_names[j].returns.variables[t].replace("#THIS#", objName[0]);
                real_variable_var[i].value = returnValue;
 
