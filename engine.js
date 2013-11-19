@@ -197,25 +197,27 @@ function asignFunctionReturnValue() {
           //var objName=real_variable_var[i].name.split(".");
           var objName = real_func_names[j].name.split(".");
           for (var t = 0; t < real_func_names[j].returns.variables.length; t++) {
-            var returnValue = real_func_names[j].returns.variables[t].replace("#THIS#", objName[0]);
-            real_variable_var[i].value = returnValue;
+            if (real_func_names[j].returns.variables != undefined) {
+               var returnValue = real_func_names[j].returns.variables[t].replace("#THIS#", objName[0]);
+               real_variable_var[i].value = returnValue;
 
-            for (var i1 = 0; i1 < real_func_Scope.length; i1++) {
-              if (real_func_Scope[i1].name == real_func_names[j].name) {
-                for (var i2 = 0; i2 < real_variable_var.length; i2++) {
-                  if (real_variable_var[i2].name == returnValue && real_variable_var[i2].line >= real_func_Scope[i1].startScope && real_variable_var[i2].line <= real_func_Scope[i1].endScope) {
-                    real_variable_var[i2].startScope = real_variable_var[i].startScope;
-                    real_variable_var[i2].endScope = real_variable_var[i].endScope;
-                    break;
+              for (var i1 = 0; i1 < real_func_Scope.length; i1++) {
+                if (real_func_Scope[i1].name == real_func_names[j].name) {
+                  for (var i2 = 0; i2 < real_variable_var.length; i2++) {
+                    if (real_variable_var[i2].name == returnValue && real_variable_var[i2].line >= real_func_Scope[i1].startScope && real_variable_var[i2].line <= real_func_Scope[i1].endScope) {
+                      real_variable_var[i2].startScope = real_variable_var[i].startScope;
+                      real_variable_var[i2].endScope = real_variable_var[i].endScope;
+                      break;
+                    }
                   }
                 }
               }
-            }
-
-            for (var k = 0; k < sink.length; k++) {
-              if (returnValue.indexOf(sink[k]) != -1) {
-                sink.push(real_variable_var[i].name);
-                real_variable_var[i].name = "#CHANGED_TO_SINK#";
+              
+              for (var k = 0; k < sink.length; k++) {
+                if (returnValue.indexOf(sink[k]) != -1) {
+                  sink.push(real_variable_var[i].name);
+                  real_variable_var[i].name = "#CHANGED_TO_SINK#";
+                }
               }
             }
           }
