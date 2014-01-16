@@ -35,6 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <script src="scripts/addon/edit/continuecomment.js"></script>
   <script src="scripts/addon/comment/comment.js"></script>
   <script src="scripts/mode/javascript/javascript.js"></script>
+  <script src="scripts/beautify/beautify.js"></script>
   <script src="esprima.js"></script>
   <script src="engine.js"></script>
   <script src="analyzer.js"></script>
@@ -54,27 +55,36 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        <div><textarea id="code" name="code" style="display: none;"></textarea></div>
         <div>
          <p>
-            <!--<input type="button" id="btnAnalyze" name="Analyze" value="Analyze" />-->
-            <a class="buttons" onclick="getEditorValue()">Run</a>
+            <table><tr>
+            <td><a class="buttons" onclick="getEditorValue()">Analyze</a></td>
+            <td><a class="buttons" onclick="beautify_editor()">Beautify</a></td>
+            </tr></table>
          </p>
         </div>
     </div>
   </div>
-        <script>
-          var editorValue = "";
-          editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-            lineNumbers: true,
-            matchBrackets: true,
-            continueComments: "Enter",
-            extraKeys: {
-              "Ctrl-Q": "toggleComment"
-            }
-          });
+  <script>
+    var editorValue = "";
+    editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+     lineNumbers: true,
+     matchBrackets: true,
+     continueComments: "Enter",
+     extraKeys: {
+      "Ctrl-Q": "toggleComment"
+     }
+    });
 
-          function getEditorValue() {
-            editorValue = editor.getValue();
-            analyze();
-          }
-        </script>
+    function getEditorValue() {
+     editorValue = editor.getValue();
+     analyze();
+    }
+    
+    function beautify_editor() {
+    var pretty_js = js_beautify(editor.getValue(),{
+     'indent_size': 1
+    });
+    editor.setValue(pretty_js);
+    }
+  </script>
 </body>
 </html>
