@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>JSPrime</title>
+  <meta name="description" content="a javascript static security analysis tool">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">JSPrime</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">a javascript static security analysis tool</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/dpnishant/jsprime/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/dpnishant/jsprime/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/dpnishant/jsprime" class="code">View JSPrime on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h1>
+
+<p>Nishant Das Patnaik (nishant.dp@)</p>
+
+<p>Sarathi Sabyasachi Sahoo (sarathisahoo@)</p>
+
+<h1>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>Today, more and more developers are switching to JavaScript as their first choice of language. The reason is simple JavaScript has now been started to be accepted as the mainstream programming for applications, be it on the web or on the mobile; be it on client-side, be it on the server side. JavaScript flexibility and its loose typing is friendly to developers to create rich applications at an unbelievable speed. Major advancements in the performance of JavaScript interpreters, in recent days, have almost eliminated the question of scalability and throughput from many organizations. So the point is JavaScript is now a really important and powerful language we have today and it's usage growing everyday. From client-side code in web applications it grew to server-side through Node.JS and it's now supported as proper language to write applications on major mobile operating system platforms like Windows 8 apps and the upcoming Firefox OS apps.</p>
+
+<p>But the problem is, many developers practice in-secure coding which leads to many clients side attacks, out of which DOM XSS is the most infamous. We tried to understand the root cause of this problem and figured out is that there are not enough practically usable tools that can solve real-world problems. Hence as our first attempt towards solving this problem, we want to talk about JSPrime: A javascript static analysis tool for the rest of us. It's a very light-weight and very easy to use point-and-click tool! The static analysis tool is based on the very popular Esprima ECMAScript parser by Aria Hidayat.</p>
+
+<p>I would like to highlight some of the interesting features of the tool below:</p>
+
+<p>JS Library Aware Source &amp; Sinks</p>
+
+<p>Most dynamic or static analyzers are developed to support native/pure JavaScript which actually is a problem for most developers since the introductions and wide-adoption for JavaScript frameworks/libraries like jQuery, YUI etc. Since these scanners are designed to support pure JavaScript, they fail at understanding the context of the development due to the usage of libraries and produce many false-positives and false-negatives. To solve this we have identified the dangerous user input sources and code execution sink functions for jQuery and YUI, for the initial release and we shall talk about how users can easily extend it for other frameworks.</p>
+
+<ul>
+<li>Variable &amp; Function Tracing (This feature is a part of our code flow analysis algorithm)</li>
+<li>Variable &amp; Function Scope Aware analysis (This feature is a part of our code flow analysis algorithm)</li>
+<li>Known filter function aware</li>
+<li>OOP &amp; Protoype Compliant</li>
+<li>Minimum False Positive alerts</li>
+<li>Supports minified javascript</li>
+<li>Blazing fast performance</li>
+<li>Point and Click :-) (my personal favorite)</li>
+<li>Upcoming features:</li>
+<li>Automatic code de-obfuscation &amp; decompression through Hybrid Analysis (Ra.2 improvisation; <a href="http://code.google.com/p/ra2-dom-xss-scanner">http://code.google.com/p/ra2-dom-xss-scanner</a>)</li>
+<li>ECMAScript family support (ActionScript 3, Node.JS, WinJS)</li>
+</ul><h1>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h1>
+
+<ul>
+<li>Test Cases Document URL: <a href="http://goo.gl/vf61Km">http://goo.gl/vf61Km</a>
+</li>
+<li>Sources &amp; Sinks Document URL: <a href="http://goo.gl/olzYM4">http://goo.gl/olzYM4</a>
+</li>
+<li>BlackHat Slide: <a href="http://www.slideshare.net/nishantdp/jsprime-bhusa13new">http://www.slideshare.net/nishantdp/jsprime-bhusa13new</a>
+</li>
+</ul><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<h2>
+<a name="web-client" class="anchor" href="#web-client"><span class="octicon octicon-link"></span></a>Web Client</h2>
+
+<p>Open "index.html" in your browser.</p>
+
+<h2>
+<a name="server-side-nodejs" class="anchor" href="#server-side-nodejs"><span class="octicon octicon-link"></span></a>Server-Side (Node.JS)</h2>
+
+<ol>
+<li>In the terminal type "node server.js"</li>
+<li>Go to 127.0.0.1:8888 in your browser.</li>
+</ol>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/dpnishant" class="avatar"><img src="https://2.gravatar.com/avatar/a383d4fa6af592f46174492487067897?d=https%3A%2F%2Fidenticons.github.com%2Fd26ac58754b962fcdbd6ae1c21c4bbc1.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/dpnishant">dpnishant</a> maintains <a href="https://github.com/dpnishant/jsprime">JSPrime</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/dpnishant/jsprime/tarball/master" class="tar">tar</a><a href="https://github.com/dpnishant/jsprime/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
