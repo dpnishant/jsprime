@@ -159,7 +159,7 @@ function asignFunctionReturnValue(sink) {
         newFunction = name;
         real_variable_var[i].name = "#CHANGED_TO_SINK#";
         sink.push(newFunction);
-        if (sinkWithConstantParam.indexOf(sink[j]) != -1) {
+        if (sinkWithConstantParam && (sinkWithConstantParam.indexOf(sink[j]) != -1)) {
           sinkWithConstantParam.push(newFunction);
         }
       }
