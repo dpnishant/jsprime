@@ -803,7 +803,7 @@ function checkInFunctionCall(sink, val, sinkObj) {
             }
           }
         }
-        if (sinkWithConstantParam.indexOf(sink) != -1) {
+        if (sinkWithConstantParam && (sinkWithConstantParam.indexOf(sink) != -1)) {
           for (var j = 0; j < real_func_call[i].arguments.literals.length; j++) {
             var args = real_func_call[i].arguments.literals[j].split("+");
             for (var k = 0; k < args.length; k++) {
