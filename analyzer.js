@@ -581,7 +581,7 @@ function checkSinkWithDirectSource(source) {
           }
         }
 
-        if (sinkWithConstantParam.indexOf(sink[i]) != -1) {
+        if (sinkWithConstantParam && (sinkWithConstantParam.indexOf(sink[i]) != -1)) {
           for (var k = 0; k < real_func_call[j].arguments.literals.length; k++) {
             var args = real_func_call[j].arguments.literals[k].split("+");
             for (var l = 0; l < args.length; l++) {
