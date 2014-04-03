@@ -80,7 +80,7 @@ function analyze() {
     getVariables(node);
   });
   removePrototype();
-  asignFunctionReturnValue();
+  assignFunctionReturnValue();
   createNativeFunctions();
 
   console.log("Function Name: " + JSON.stringify(real_func_names));
@@ -162,7 +162,7 @@ function removePrototype() {
   }
 }
 
-function asignFunctionReturnValue() {
+function assignFunctionReturnValue() {
   for (var i = 0; i < real_variable_var.length; i++) {
     var val = real_variable_var[i].value;
     var name = real_variable_var[i].name;
